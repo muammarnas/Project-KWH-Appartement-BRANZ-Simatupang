@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="46cad572-9c33-403f-8797-cf8a52914ac6">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     report_kwh.`Id_Number` AS report_kwh_Id_Number,
+     report_kwh.`Name` AS report_kwh_Name,
+     report_kwh.`No_Handphone` AS report_kwh_No_Handphone,
+     report_kwh.`Usage_KWH` AS report_kwh_Usage_KWH,
+     report_kwh.`Total` AS report_kwh_Total
+FROM
+     `report_kwh` report_kwh]]>
+	</queryString>
+	<field name="report_kwh_Id_Number" class="java.lang.String"/>
+	<field name="report_kwh_Name" class="java.lang.String"/>
+	<field name="report_kwh_Usage_KWH" class="java.lang.String"/>
+	<field name="report_kwh_Total" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="49" y="46" width="77" height="20" uuid="bde20a1a-0a33-434b-9860-1eff7f53623e"/>
+				<textElement>
+					<font fontName="Verdana" size="11"/>
+				</textElement>
+				<text><![CDATA[SIMATUPANG]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="38" y="13" width="100" height="37" uuid="4a4c6a5b-c07b-445b-8198-f1144c31a35c"/>
+				<textElement>
+					<font fontName="Verdana" size="28"/>
+				</textElement>
+				<text><![CDATA[BRANZ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="225" y="30" width="127" height="20" uuid="db0b98d8-4848-424c-9b90-2a70b8b57920"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[KWH Usage Report]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="29" splitType="Stretch">
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="455" y="0" width="100" height="20" uuid="0e284457-1b50-4471-857b-7bbe7616ad0b"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="23" splitType="Stretch">
+			<staticText>
+				<reportElement x="33" y="2" width="100" height="20" uuid="aab20c68-f073-46c3-aaa9-e8c925be9dd9"/>
+				<text><![CDATA[ID Owner]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="175" y="2" width="100" height="20" uuid="f8008742-7ee8-4d1c-b502-9ff8d8ec0a5e"/>
+				<text><![CDATA[Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="318" y="2" width="100" height="20" uuid="9494249e-3896-4992-bd26-a9332d8d4989"/>
+				<text><![CDATA[KWH Usage]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="454" y="2" width="100" height="20" uuid="9e3b9d2d-424a-4b36-bb7f-1fe80a07fd0d"/>
+				<text><![CDATA[Total]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="22" splitType="Stretch">
+			<textField>
+				<reportElement x="33" y="0" width="100" height="20" uuid="3583ca3b-ea68-4840-9653-67ecd7e3ddeb"/>
+				<textFieldExpression><![CDATA[$F{report_kwh_Id_Number}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="175" y="0" width="100" height="20" uuid="31b5dd48-bd9f-492f-86dc-df99f9bc76ba"/>
+				<textFieldExpression><![CDATA[$F{report_kwh_Name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="318" y="0" width="100" height="20" uuid="477bf6f8-5e20-49af-bfd6-12e3ab25a86d"/>
+				<textFieldExpression><![CDATA[$F{report_kwh_Usage_KWH}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="454" y="0" width="100" height="20" uuid="35346d9b-9f8e-4e52-a545-acb125b9e3e7"/>
+				<textFieldExpression><![CDATA[$F{report_kwh_Total}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

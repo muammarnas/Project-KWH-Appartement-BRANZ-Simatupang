@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="f55250ce-0073-4c1b-918a-c59c4c868302">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     owner_detail_apart.`Id_Number` AS owner_detail_apart_Id_Number,
+     owner_detail_apart.`Name` AS owner_detail_apart_Name,
+     owner_detail_apart.`Address` AS owner_detail_apart_Address,
+     owner_detail_apart.`No_Handphone` AS owner_detail_apart_No_Handphone,
+     owner_detail_apart.`RP_Tower` AS owner_detail_apart_RP_Tower,
+     owner_detail_apart.`RP_Bed` AS owner_detail_apart_RP_Bed,
+     owner_detail_apart.`RP_Unit_Style` AS owner_detail_apart_RP_Unit_Style,
+     owner_detail_apart.`Used_KWH` AS owner_detail_apart_Used_KWH
+FROM
+     `owner_detail_apart` owner_detail_apart]]>
+	</queryString>
+	<field name="owner_detail_apart_Id_Number" class="java.lang.String"/>
+	<field name="owner_detail_apart_Name" class="java.lang.String"/>
+	<field name="owner_detail_apart_Address" class="java.lang.String"/>
+	<field name="owner_detail_apart_No_Handphone" class="java.lang.String"/>
+	<field name="owner_detail_apart_Used_KWH" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="62" splitType="Stretch">
+			<staticText>
+				<reportElement x="196" y="20" width="171" height="20" uuid="2ed8ebe4-366c-4412-8683-f9bbe7488871"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Apartement Owner Report]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="29" y="3" width="100" height="37" uuid="8dedae07-9564-48aa-acc6-0543f1dbd65b"/>
+				<textElement>
+					<font fontName="Verdana" size="28"/>
+				</textElement>
+				<text><![CDATA[BRANZ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="40" y="36" width="77" height="20" uuid="ec5f0dbc-f5b3-496e-9ee5-39fe399fac7c"/>
+				<textElement>
+					<font fontName="Verdana" size="11"/>
+				</textElement>
+				<text><![CDATA[SIMATUPANG]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="21" splitType="Stretch">
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="455" y="0" width="100" height="20" uuid="f11176b2-61f0-4475-9fb0-fc515b787fe4"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="25" splitType="Stretch">
+			<staticText>
+				<reportElement x="38" y="2" width="100" height="20" uuid="0bc6f13a-b2fc-45ca-ab39-8c652bf02a54"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[ID Owner]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="158" y="2" width="100" height="20" uuid="0f585c02-009a-4aea-a6c9-57bf3a8db582"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="295" y="2" width="100" height="20" uuid="72bcd56a-a39f-41e2-9719-8d593ca25b0c"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Handphone]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="416" y="2" width="100" height="20" uuid="7000d559-eefa-47d2-912a-be402fcff504"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[KWH]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="22" splitType="Stretch">
+			<textField>
+				<reportElement x="38" y="0" width="100" height="20" uuid="ad084312-1fc4-46ba-ae4e-a7e1d0a26423"/>
+				<textFieldExpression><![CDATA[$F{owner_detail_apart_Id_Number}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="158" y="0" width="100" height="20" uuid="0834c831-2d69-4828-beea-2773d782b712"/>
+				<textFieldExpression><![CDATA[$F{owner_detail_apart_Name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="295" y="0" width="100" height="20" uuid="1c466232-5c83-404b-8807-835550ed33ac"/>
+				<textFieldExpression><![CDATA[$F{owner_detail_apart_No_Handphone}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="416" y="0" width="100" height="20" uuid="e6629947-a264-44ba-a773-8d1477d4fcda"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{owner_detail_apart_Used_KWH}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
